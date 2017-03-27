@@ -27,15 +27,17 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void Main(String[] args)
-    {
-      Application.launch(PageAccueil.class, args);
+    public static void Main(String[] args) {
+
+        Application.launch(PageFormulaire.class, args);
+// PageFormulaire.launch(PageFormulaire.class);
+        //Application.launch(PageAccueil.class, args);
     }
-    
+
 }
 
-        // Exemple liste de contact
-        /*
+// Exemple liste de contact
+/*
         ArrayList<String> contact000 = new ArrayList<>();
         contact000.addAll(Arrays.asList("Nom", "Prénom", "Téléphone", "Adresse", "Email"));
         ArrayList<String> contact001 = new ArrayList<>();
@@ -49,7 +51,4 @@ public class Main {
         
         ArrayList<ArrayList<String>> listContact = new ArrayList(Arrays.asList(contact000, contact001, contact002, contact003, contact004));
         
-        */
-    
-
-
+ */

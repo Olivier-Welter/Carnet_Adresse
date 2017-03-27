@@ -7,7 +7,6 @@ package carnetadresse;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
 
 /**
  *
@@ -26,41 +26,41 @@ public class PageAccueil extends Application {
     public void start(Stage primaryStage) {
         
         // Grille conteneur
-        GridPane grid = new GridPane(); // Nouvelle grille
-        grid.setPadding(new Insets(10, 10, 10, 10)); // Marge intérieure
-        grid.setVgap(20); // Hauteur ligne
-        grid.setHgap(20); // Largeur colonne
+        GridPane grille = new GridPane(); // Nouvelle grille
+        grille.setPadding(new Insets(10, 10, 10, 10)); // Marge intérieure
+        grille.setVgap(20); // Hauteur ligne
+        grille.setHgap(20); // Largeur colonne
         
         // Input Text -> Rechercher un contact
         final TextField txtRecherche = new TextField(); // Nouveau champ
         txtRecherche.setPromptText("Rechercher un contact"); // Texte du champ
         txtRecherche.setPrefColumnCount(15); // Largeur du champ
         GridPane.setConstraints(txtRecherche, 0, 0); // Position colonne 0, ligne 0
-        grid.getChildren().add(txtRecherche); // Ajout du champ à la grille
+        grille.getChildren().add(txtRecherche); // Ajout du champ à la grille
         
         // Bouton -> Rechercher un contact
         Button btnRecherche = new Button("Rechercher"); // Nouveau bouton
         GridPane.setColumnSpan(btnRecherche, 5); // Largeur du bouton
         GridPane.setConstraints(btnRecherche, 1, 0); // Position colonne 1, ligne 0
-        grid.getChildren().add(btnRecherche); // Ajout du bouton à la grille
+        grille.getChildren().add(btnRecherche); // Ajout du bouton à la grille
    
         // Bouton -> Ajouter un contact
         Button btnAjout = new Button("Ajouter un contact"); // Nouveau bouton
         GridPane.setConstraints(btnAjout, 10, 10); // Position colonne 5, ligne 5
         GridPane.setColumnSpan(btnAjout, 5); // Largeur du bouton
-        grid.getChildren().add(btnAjout); // Ajout du bouton à la grille
+        grille.getChildren().add(btnAjout); // Ajout du bouton à la grille
         
         // Label -> Contacts à afficher
         final Label labelContact = new Label(); // Nouveau label
         GridPane.setConstraints(labelContact, 0, 10); // Position colonne 0, ligne 10
         GridPane.setColumnSpan(labelContact, 5); // Largeur du label
-        grid.getChildren().add(labelContact); // Ajout du label à la grille
+        grille.getChildren().add(labelContact); // Ajout du label à la grille
         
         // Label -> Messages d'erreur
         final Label labelErreur = new Label(); // Nouveau label
         GridPane.setConstraints(labelErreur, 0, 10); // Position colonne 0, ligne 10
         GridPane.setColumnSpan(labelErreur, 5); // Largeur du label
-        grid.getChildren().add(labelErreur); // Ajout du label à la grille
+        grille.getChildren().add(labelErreur); // Ajout du label à la grille
         
         // Evènement CLICK rechercher un contact
         btnRecherche.setOnAction((ActionEvent e) -> {
@@ -79,13 +79,14 @@ public class PageAccueil extends Application {
         // Evènement CLICK ajouter un contact
         btnAjout.setOnAction((ActionEvent e) -> {
             // RECHERCHER UN CONTACT
-            labelErreur.setText("Affichage formulaire d'ajout d'un contact");
+            
+            
         });
 
 
         //Scene
-        Scene scene = new Scene(grid, 520, 280); // Nouvelle scène contenant la grille créée, largeur, hauteur
-        primaryStage.setTitle("Carnet d'adresse"); // Titre fenêtre principale
+        Scene scene = new Scene(grille, 520, 280); // Nouvelle scène contenant la grille créée, largeur, hauteur
+        primaryStage.setTitle("Carnet Accueil"); // Titre fenêtre principale
         primaryStage.setScene(scene); // Choix de la scène à afficher dans la fenêtre principale
         primaryStage.show(); // Affichage fenêtre principale
         
