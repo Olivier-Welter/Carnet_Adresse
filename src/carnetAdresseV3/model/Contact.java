@@ -1,117 +1,137 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package carnetAdresseV3.model;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- *
- * @author Kévin
- */
-public class Contact implements Serializable {
 
-    private String nom, prenom, mobilePhone, fixePhone, mailPerso, mailPro, adresse;
+/**
+ * @author Olive, Vince & Kéké
+ */
+
+public final class Contact implements Serializable {
+
+    //private String nom, prenom, mobilePhone, fixePhone, mailPerso, mailPro, adresse;
+    private ArrayList<String> infosContact ;
     private String mssgErreur = null;
 
     /**
      * Constructeur contact
-     *
      * @param nom
+     * @param prenom
+     * @param mobilePhone
+     * @param fixePhone
+     * @param mailPerso
+     * @param mailPro
+     * @param adresse
      */
-    public Contact(String nom, String prenom, String mobilePhone, String fixePhone, String mailPerso, String mailPro, String adresse) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.fixePhone = fixePhone;
-        this.mobilePhone = mobilePhone;
-        this.mailPerso = mailPerso;
-        this.mailPro = mailPro;
-        this.adresse = adresse;
-        if (infosCorrectes()) {
-            enregistrerContact();
-        }
+    public Contact(String nom, String prenom, String mobilePhone, String fixePhone, String mailPerso, String mailPro, String adresse)
+    {
+        infosContact = new ArrayList(Arrays.asList(nom,prenom,mobilePhone,fixePhone,mailPerso,mailPro,adresse));
+        if (infosCorrectes()) enregistrerContact();
     }
-
-    @Override
-    public String toString() {
-        return (nom + " ," + prenom + " ," + mobilePhone + " ," + fixePhone + " ," + mailPerso + " ," + mailPro + " ," + adresse);
-    }
-
+    
     /**
      * Retoune le nom du contact
+     * @return 
      */
-
-    public String getNom() {
-        return nom;
+    public String getNom()
+    {
+        return infosContact.get(0);
     }
 
     /**
      * Retoune le message d'erreur s'il y en a un
+     * @return 
      */
-    public String getMssgErreur() {
+    public String getMssgErreur()
+    {
         return mssgErreur;
     }
 
     /**
      * Vérifie si la recherche n'est pas vide
+     * @return 
      */
-    public Boolean infosCorrectes() {
-        Boolean reponse = false;
+    public Boolean infosCorrectes()
+    {
+        if (infosContact.get(0) == null || infosContact.get(0).isEmpty()) mssgErreur = "Il a pas de nom ce gros enculé ?!";
+        else if (infosContact.get(1) == null || infosContact.get(1).isEmpty()) mssgErreur = "PD que tu es ! Pas de prénom, pas de contact !";
 
-        if ((nom != null && !nom.isEmpty())) {
-            reponse = true;
-        } else {
-            mssgErreur = "Il a pas de nom ce gros enculé ?!";
-        }
-
-        return reponse;
+        return (mssgErreur == null);
     }
 
     /**
      * Enregistrer
      */
-    public void enregistrerContact() {
-//Lire
-// ArrayList<Contact> arraylist= new ArrayList<Contact>();
-        ArrayList<ArrayList> arrayparent = new ArrayList<ArrayList>();
-        ArrayList<String> arrayfils = new ArrayList<String>();
-        try {
-            FileInputStream fileIn = new FileInputStream("E:\\contact.dat");
-            ObjectInputStream ois = new ObjectInputStream(fileIn);
-            arrayparent = (ArrayList) ois.readObject();
-            ois.close();
-            fileIn.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-// TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+    public void enregistrerContact()
+    {
+        // Initialisation du tableau
+        ArrayList listInfos = new ArrayList();
+        
+        // Teste si le fichier existe
+        File file = new File("contact.dat");
+        if(file.exists()) System.out.println("\n" + file.getAbsolutePath() + " existe déjà\n");
+        else System.out.println("\nCréation de " + file.getAbsolutePath() + "\n");
 
-// enregistrement 
-        arrayfils.addAll(Arrays.asList(this.nom, this.prenom));
-        arrayparent.add(arrayfils);
-
-        try {
-            FileOutputStream fileOut = new FileOutputStream("E:\\contact.dat");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(arrayparent);
-            out.close();
-            fileOut.close();
-            System.out.println("\nSerialisation terminée avec succès...\n");
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        lectureFichierContact();
+        
+        // Ajout des infos à enregistrer dans le tableau
+        listInfos.add(infosContact);
+        
+        ecritureFichierContact(listInfos);
+        
+        System.out.println("\nEnregistrement terminé avec succès\n");
     }
-
+    
+    /**
+    * Lecture du fichier contact.dat
+    * @return 
+    */
+    public ArrayList lectureFichierContact()
+    {
+        ArrayList arrayLecture = new ArrayList();
+        
+        try
+        {
+            // Ouverture du fichier en lecture
+            FileInputStream fileIn = new FileInputStream("contact.dat");
+            // Désérialisation du fichier
+            ObjectInputStream ois = new ObjectInputStream(fileIn);
+            // Copie du contenu du fichier dans un tableau
+            arrayLecture = new ArrayList((ArrayList) ois.readObject());
+            // Arrêt de la désérialisation
+            ois.close();
+            // Fermeture du fichier en lecture
+            fileIn.close();
+        }
+        catch (FileNotFoundException e) { mssgErreur = "Une erreur est survenue lors de la lecture du fichier contact"; }
+        catch (IOException | ClassNotFoundException e) { mssgErreur = "Une erreur est survenue lors de la lecture du fichier contact"; }
+        
+        return arrayLecture;
+    }
+    
+    /**
+    * Ecriture du fichier contact.dat
+    * @param arrayEcriture 
+    */
+    public void ecritureFichierContact(ArrayList arrayEcriture)
+    {
+        try
+        {
+            // Ouverture fichier en écriture
+            FileOutputStream fileOut = new FileOutputStream("contact.dat");
+            // Sérialisation du fichier
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            // Remplace le contenu du fichier par celui du tableau
+            out.writeObject(arrayEcriture);
+            // Arrêt de la sérialisation
+            out.close();
+            // Fermeture du fichier en écriture
+            fileOut.close();
+        }
+        catch (FileNotFoundException e) { mssgErreur = "Une erreur est survenue lors de l'écriture du fichier contact"; }
+        catch (IOException e) { mssgErreur = "Une erreur est survenue lors de l'écriture du fichier contact"; }
+    }
+    
 }

@@ -1,17 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package carnetAdresseV3.model;
 
 /**
- *
- * @author Kévin
+ * @author Olive, Vince & Kéké
  */
-public class Recherche {
+
+public final class Recherche {
     
-    private String recherche;
+    private final String recherche;
     private String mssgErreur = null;
     
     /**
@@ -27,6 +22,7 @@ public class Recherche {
     
     /**
      * Retoune la chaîne recherchée
+     * @return 
      */
     
     public String getRecherche()
@@ -36,6 +32,7 @@ public class Recherche {
     
     /**
      * Retoune le message d'erreur s'il y en a un
+     * @return 
      */
     
     public String getMssgErreur()
@@ -45,6 +42,7 @@ public class Recherche {
     
     /**
      * Vérifie si la recherche n'est pas vide
+     * @return 
      */
     
     public Boolean rechercheCorrecte()
