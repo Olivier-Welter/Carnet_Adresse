@@ -17,6 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -33,7 +34,9 @@ public class Main extends Application {
     @FXML
     private TextField txtRecherche;
     @FXML
-    private TextField txtNom;
+    private TextField contactNom,contactPrenom,contactFixePhone,contactMobilePhone,contactMailPro,contactMailPerso;
+    @FXML
+    private TextArea contactAdresse;
 
     
     /**
@@ -89,7 +92,8 @@ public class Main extends Application {
     private void actionBoutonEnregistrer(ActionEvent event) throws IOException
     {
         // Instancie Contact avec la chaîne contenue dans le champ de saisie du nom
-        Contact currentContact = new Contact(txtNom.getText());
+         
+        Contact currentContact = new Contact(contactNom.getText(),contactPrenom.getText(),contactFixePhone.getText(),contactMobilePhone.getText(),contactMailPro.getText(),contactMailPerso.getText(),contactAdresse.getText());
         if(currentContact.getMssgErreur() != null) labelErreur.setText(currentContact.getMssgErreur());
         else
         {
