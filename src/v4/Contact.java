@@ -33,8 +33,10 @@ class Contact implements Serializable {
       arraylist = (ArrayList) ois.readObject();
       ois.close();
       fileIn.close();
+     
     } catch (FileNotFoundException e) {
-      e.printStackTrace();
+      //e.printStackTrace();
+      System.out.println("coucou");
     } catch (IOException e) {
       e.printStackTrace();
     } catch (ClassNotFoundException e) {
