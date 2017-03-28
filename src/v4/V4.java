@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package carnetadresseV2;
+package v4;
+
+
 
 /**
  *
@@ -24,7 +26,7 @@ import javafx.stage.Stage;
  * @author Olivier
  */
 
-public class FormulaireSaisie extends Application {
+public class V4 extends Application {
     
     
     @Override
