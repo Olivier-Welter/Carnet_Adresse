@@ -27,25 +27,7 @@ public class TestArrayList {
       //*****************************
       
       
-       try {
-                // enregistrement
-                ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream ("E:\\contact.dat"));
-                out.writeObject("Sauvegarde de l'ArrayList");
-                out.writeObject(new Contact("Gomez", "Michel","0652659865", "0523659874","toto@toto.com","tata@tata.com","58 rue des signe - 31 000 Toulouse"));
-                out.close();
-                // lecture
-                ObjectInputStream in = new ObjectInputStream(new FileInputStream ("E:\\contact.dat"));
-                String s = (String) in.readObject();
-                System.out.println(s);
-                Contact p = (Contact) in.readObject();
-                System.out.println(p);
-                in.close();
-            }
-            catch (Exception e) {
-                e.printStackTrace ();
-            }
-      
-      //******************************
+     
       
       
 
