@@ -7,17 +7,22 @@ package carnetadresse;
 
 import javafx.application.Application;
 
+
 /**
  *
  * @author Olivier
  */
-public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Application.launch(FormulaireSaisie.class, args);
-    }
+public class Stage extends Application {
     
+    
+    @Override
+    public void start(javafx.stage.Stage Stage) {
+        
+
+        
+      
+        
+        
+    }
 }
+
