@@ -8,20 +8,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="634.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121" fx:controller="carnetAdresseV3.Main">
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carnetAdresseV3.Main">
    <children>
-      <SplitPane dividerPositions="0.07992565055762081, 0.8977695167286245" orientation="VERTICAL" prefHeight="540.0" prefWidth="634.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.8364312267657993" orientation="VERTICAL" prefHeight="540.0" prefWidth="634.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="62.0" prefWidth="632.0">
                <children>
-                  <TextField fx:id="contactRecherche" layoutX="14.0" layoutY="8.0" prefHeight="25.0" prefWidth="392.0" />
-                  <Button fx:id="buttonRecherche" layoutX="420.0" layoutY="8.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="199.0" text="Rechercher" onAction="#actionBoutonRecherche" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-               <children>
-                  <TableView fx:id="table" prefHeight="434.0" prefWidth="632.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columns >
+                  <TableView fx:id="table" prefHeight="112.0" prefWidth="632.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
                       <TableColumn fx:id="tableNom" prefWidth="100.0" text="Nom" />
                       <TableColumn fx:id="tablePrenom" prefWidth="100.0" text="Prénom" />
                         <TableColumn fx:id="tablePhone" prefWidth="100.0" text="Téléphone" />
@@ -31,10 +25,11 @@
                   </TableView>
                </children>
             </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="293.0" prefWidth="632.0">
                <children>
-                  <Button layoutX="419.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="199.0" text="Ajouter Contact" onAction="#actionBoutonContact" />
-                  <Label fx:id="labelErreur" layoutX="18.0" layoutY="18.0" prefHeight="17.0" prefWidth="385.0" text="" />
+                  <Button layoutX="410.0" layoutY="27.0" mnemonicParsing="false" onAction="#actionBoutonContact" prefHeight="25.0" prefWidth="199.0" text="Ajouter Contact" />
+                  <Label fx:id="labelErreur" layoutX="124.0" layoutY="63.0" prefHeight="17.0" prefWidth="385.0" text="" />
+                  <TextField fx:id="contactRecherche" layoutX="24.0" layoutY="27.0" prefHeight="25.0" prefWidth="344.0" promptText="Rechercher un contact" />
                </children>
             </AnchorPane>
         </items>

@@ -5,8 +5,12 @@ import carnetAdresseV3.model.Recherche;
 import carnetAdresseV3.model.TableItem;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -86,6 +90,16 @@ public class Main extends Application {
     protected void initialize() throws IOException {
         if (showTable) {
             listeInfos(Contact.lectureFichierContact());
+            
+            contactRecherche.textProperty().addListener((ObservableValue<? extends String> recherche, String oldStr, String newStr) ->
+            {
+                try
+                {
+                    actionRecherche(recherche.getValue());
+                }
+                catch (IOException ex) {}
+            });
+            
         }
     }
 
@@ -106,15 +120,16 @@ public class Main extends Application {
         table.setItems(tableContent);
     }
 
+
+    
     /**
      * Bouton RECHERCHE
      *
      * @param event
      */
-    @FXML
-    private void actionBoutonRecherche(ActionEvent event) throws IOException {
+    private void actionRecherche(String recherche) throws IOException {
         // Instancie Recherche avec la chaîne contenue dans le champ de saisie de recherche
-        Recherche currentRecherche = new Recherche(contactRecherche.getText(), Contact.lectureFichierContact());
+        Recherche currentRecherche = new Recherche(recherche, Contact.lectureFichierContact());
         if (currentRecherche.getMssgErreur() != null) {
             // Affichage de l'erreur
             labelErreur.setText(currentRecherche.getMssgErreur());
