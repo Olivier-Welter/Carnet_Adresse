@@ -1,5 +1,7 @@
 package carnetAdresseV3.model;
 
+import java.util.ArrayList;
+
 /**
  * @author Olive, Vince & Kéké
  */
@@ -7,6 +9,7 @@ package carnetAdresseV3.model;
 public final class Recherche {
     
     private final String recherche;
+    private ArrayList listRecherche;
     private String mssgErreur = null;
     
     /**
@@ -14,10 +17,20 @@ public final class Recherche {
      * @param recherche
      */
     
-    public Recherche(String recherche)
+    public Recherche(String recherche, ArrayList listInfos)
     {
         this.recherche = recherche;
-        if (rechercheCorrecte()) rechercheContact();
+        if (rechercheCorrecte()) rechercheContact(listInfos);
+    }
+        
+    /**
+     * Retoune la liste résultant de la recherche
+     * @return 
+     */
+    
+    public ArrayList getListRecherche()
+    {
+        return listRecherche;
     }
     
     /**
@@ -62,9 +75,14 @@ public final class Recherche {
      * Recherche
      */
     
-    public void rechercheContact()
+    public void rechercheContact(ArrayList listInfos)
     {
         // Fonction recherche contact
+        
+        
+        
+        // Stocke la liste résultant de la recherche
+        listRecherche = listInfos;
     }
     
 }

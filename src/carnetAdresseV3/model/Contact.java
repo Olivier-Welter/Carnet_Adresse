@@ -11,7 +11,6 @@ import java.util.Arrays;
 
 public final class Contact implements Serializable {
 
-    //private String nom, prenom, mobilePhone, fixePhone, mailPerso, mailPro, adresse;
     private ArrayList<String> infosContact ;
     private String mssgErreur = null;
 
@@ -71,8 +70,8 @@ public final class Contact implements Serializable {
         
         // Teste si le fichier existe
         File file = new File("contact.dat");
-        if(file.exists()) System.out.println("\n" + file.getAbsolutePath() + " existe déjà\n");
-        else System.out.println("\nCréation de " + file.getAbsolutePath() + "\n");
+        if(file.exists()) System.out.println("\n" + file.getAbsolutePath() + " existe déjà");
+        else System.out.println("\nCréation de " + file.getAbsolutePath());
 
         listInfos = lectureFichierContact();
         
@@ -81,14 +80,14 @@ public final class Contact implements Serializable {
         
         ecritureFichierContact(listInfos);
         
-        System.out.println("\nEnregistrement terminé avec succès\n");
+        System.out.println("\nEnregistrement terminé avec succès");
     }
     
     /**
-    * Lecture du fichier contact.dat
-    * @return 
+     * Lecture du fichier contact.dat
+     * @return 
     */
-    public ArrayList lectureFichierContact()
+    public static ArrayList lectureFichierContact()
     {
         ArrayList arrayLecture = new ArrayList();
         
@@ -105,15 +104,14 @@ public final class Contact implements Serializable {
             // Fermeture du fichier en lecture
             fileIn.close();
         }
-        catch (FileNotFoundException e) { mssgErreur = "Une erreur est survenue lors de la lecture du fichier contact"; }
-        catch (IOException | ClassNotFoundException e) { mssgErreur = "Une erreur est survenue lors de la lecture du fichier contact"; }
+        catch (IOException | ClassNotFoundException e) {}
         
         return arrayLecture;
     }
     
     /**
-    * Ecriture du fichier contact.dat
-    * @param arrayEcriture 
+     * Ecriture du fichier contact.dat
+     * @param arrayEcriture 
     */
     public void ecritureFichierContact(ArrayList arrayEcriture)
     {

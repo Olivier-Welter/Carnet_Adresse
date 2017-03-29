@@ -3,8 +3,10 @@ package carnetAdresseV3;
 import carnetAdresseV3.model.Contact;
 import carnetAdresseV3.model.Recherche;
 import java.io.IOException;
+import java.util.ArrayList;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -26,6 +29,7 @@ public class Main extends Application {
     
     @FXML private Label labelErreur;
     @FXML private TextArea contactAdresse;
+    @FXML private TableView contactTable;
     @FXML private TextField contactRecherche,contactNom,contactPrenom,contactFixePhone,contactMobilePhone,contactMailPro,contactMailPerso;
     
 
@@ -34,20 +38,19 @@ public class Main extends Application {
      * Démarrage de l'interface graphique
      * @throws java.io.IOException
      */
-    
     @Override
     public void start(Stage primaryStage) throws IOException
     {
         currentStage = primaryStage;
         currentStage.setTitle("LE carnet d'adresse by Olive, Vince & Kéké");
         changePage("view/AccueilView.fxml");
+        listeInfos(Contact.lectureFichierContact());
     }
 
     /**
      * Affiche la page dont la vue est passée en paramètre
      * @fxml
      */
-
     private void changePage(String fxml) throws IOException
     {
         // Récupère le contenu du fichier fxml
@@ -57,6 +60,14 @@ public class Main extends Application {
         // Met à jour la fenêtre
         currentStage.show();
     }
+    
+     /**
+     * Liste les infos sur la page d'accueil
+     */
+    private void listeInfos(ArrayList listInfos) throws IOException
+    {
+        System.out.println(listInfos);
+    }
 
     
     
@@ -64,21 +75,23 @@ public class Main extends Application {
      * Bouton RECHERCHE
      * @param event
      */
-    
     @FXML
-    private void actionBoutonRecherche(ActionEvent event)
+    private void actionBoutonRecherche(ActionEvent event) throws IOException
     {
         // Instancie Recherche avec la chaîne contenue dans le champ de saisie de recherche
-        Recherche currentRecherche = new Recherche(contactRecherche.getText());
+        Recherche currentRecherche = new Recherche(contactRecherche.getText(), Contact.lectureFichierContact());
         if(currentRecherche.getMssgErreur() != null) labelErreur.setText(currentRecherche.getMssgErreur());
-        else labelErreur.setText("Recherche de " + currentRecherche.getRecherche());
+        else
+        {
+            labelErreur.setText("Recherche de " + currentRecherche.getRecherche());
+            listeInfos(currentRecherche.getListRecherche());
+        }
     }
     
     /**
      * Bouton AJOUTER CONTACT
      * @param event
      */
-    
     @FXML
     private void actionBoutonContact(ActionEvent event) throws IOException
     {
@@ -91,7 +104,6 @@ public class Main extends Application {
      * Bouton ENREGISTRER
      * @param event
      */
-    
     @FXML
     private void actionBoutonEnregistrer(ActionEvent event) throws IOException
     {
@@ -105,7 +117,6 @@ public class Main extends Application {
      * Bouton RETOUR
      * @param event
      */
-    
     @FXML
     private void actionBoutonRetour(ActionEvent event) throws IOException
     {
@@ -120,7 +131,6 @@ public class Main extends Application {
      * Le main lance la méthode start avec Application.launch()
      * @param args
      */
-
     public static void main(String[] args)
     {
         launch(args);
