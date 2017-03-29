@@ -87,7 +87,7 @@ public final class Contact implements Serializable {
      * Lecture du fichier contact.dat
      * @return 
     */
-    public static ArrayList lectureFichierContact()
+    public static ArrayList<ArrayList> lectureFichierContact()
     {
         ArrayList arrayLecture = new ArrayList();
         

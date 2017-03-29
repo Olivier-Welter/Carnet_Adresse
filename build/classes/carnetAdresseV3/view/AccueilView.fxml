@@ -15,7 +15,7 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
                   <TextField fx:id="contactRecherche" layoutX="14.0" layoutY="8.0" prefHeight="25.0" prefWidth="392.0" />
-                  <Button layoutX="420.0" layoutY="8.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="199.0" text="Rechercher" onAction="#actionBoutonRecherche" />
+                  <Button fx:id="buttonRecherche" layoutX="420.0" layoutY="8.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="199.0" text="Rechercher" onAction="#actionBoutonRecherche" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">

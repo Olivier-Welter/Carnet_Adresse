@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -22,6 +23,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 /**
  *
@@ -30,13 +32,19 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     private Stage currentStage;
+    static private boolean showTable = false;
     private final ObservableList<TableItem> tableContent = FXCollections.observableArrayList();
     
     @FXML private Label labelErreur;
     @FXML private TextArea contactAdresse;
     @FXML private TableView<TableItem> table;
-    @FXML private TableColumn<TableItem, String> tableNom,tablePrenom,tablePhone,tableAdresse,tableMail;
+    @FXML private TableColumn<TableItem, String> tableNom;
+    @FXML private TableColumn<TableItem, String> tablePrenom;
+    @FXML private TableColumn<TableItem, String> tablePhone;
+    @FXML private TableColumn<TableItem, String> tableAdresse;
+    @FXML private TableColumn<TableItem, String> tableMail;
     @FXML private TextField contactRecherche,contactNom,contactPrenom,contactFixePhone,contactMobilePhone,contactMailPro,contactMailPerso;
+    
 
     
     /**
@@ -48,8 +56,9 @@ public class Main extends Application {
     {
         currentStage = primaryStage;
         currentStage.setTitle("L'anale des libertins toulousains");
+       
         changePage("view/AccueilView.fxml");
-        listeInfos(Contact.lectureFichierContact());
+
     }
 
     /**
@@ -58,50 +67,40 @@ public class Main extends Application {
      */
     private void changePage(String fxml) throws IOException
     {
+        showTable = fxml.equals("view/AccueilView.fxml");
         // Récupère le contenu du fichier fxml
         Parent content = FXMLLoader.load(getClass().getResource(fxml));
         // Incorpore celui-ci dans une nouvelle scène, et remplace la scène actuelle par la nouvelle
         currentStage.setScene(new Scene(content));
         // Met à jour la fenêtre
         currentStage.show();
+        
     }
     
     @FXML
-    protected void initialize()
+    protected void initialize() throws IOException
     {
-        PropertyValueFactory<TableItem, String> nomProperty = new PropertyValueFactory<>("nom");
-        PropertyValueFactory<TableItem, String> prenomProperty = new PropertyValueFactory<>("prenom");
-        PropertyValueFactory<TableItem, String> phoneProperty = new PropertyValueFactory<>("phone");
-        PropertyValueFactory<TableItem, String> adresseProperty = new PropertyValueFactory<>("adresse");
-        PropertyValueFactory<TableItem, String> mailProperty = new PropertyValueFactory<>("mail");
-        tableNom.setCellValueFactory(nomProperty);
-        tablePrenom.setCellValueFactory(prenomProperty);
-        tablePhone.setCellValueFactory(phoneProperty);
-        tableAdresse.setCellValueFactory(adresseProperty);
-        tableMail.setCellValueFactory(mailProperty);
-        ArrayList listInfos = Contact.lectureFichierContact();
+        if(showTable) listeInfos(Contact.lectureFichierContact());
+    }
+    
+    /**
+     * Liste les infos sur la page d'accueil
+     */
+    private void listeInfos(ArrayList<ArrayList> listInfos) throws IOException
+    {
         
-        for(int i = 0; i < listInfos.size();i++)
+        tableNom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        tablePrenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        tablePhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        tableAdresse.setCellValueFactory(new PropertyValueFactory<>("adresse"));
+        tableMail.setCellValueFactory(new PropertyValueFactory<>("mail"));
+
+        for(ArrayList<String> ligne:listInfos)
         {
-            ArrayList ligne = (ArrayList) listInfos.get(i);
-            tableContent.add(new TableItem((String) ligne.get(0),(String) ligne.get(1),(String) ligne.get(2),(String) ligne.get(3),(String) ligne.get(4)));
+            tableContent.add(new TableItem(ligne.get(0),ligne.get(1),ligne.get(2),ligne.get(3),ligne.get(4)));
         }
         table.setItems(tableContent);
     }
-    
-     /**
-     * Liste les infos sur la page d'accueil
-     */
-    private void listeInfos(ArrayList listInfos) throws IOException
-    {
-        /*
-        tableContent.add(new TableItem("Welter","Olivier","05607670752\n6546561644","64 route de ta mère 696969 boulecity","welter.olivier@gmail.com"));
-        tableContent.add(new TableItem("Tescari","Vincent","05607670752\n6546561644","64 route de ta mère 696969 boulecity","tescari.vincent@gmail.com\nsexybitchdu31@youporn.com"));
-        tableContent.add(new TableItem("Diez","Kévin","05607670752\n6546561644","64 route de ta mère 696969 boulecity","diez.kevin@gmail.com"));
-        */
-        System.out.println(listInfos);
-    }
-
     
     /**
      * Bouton RECHERCHE
