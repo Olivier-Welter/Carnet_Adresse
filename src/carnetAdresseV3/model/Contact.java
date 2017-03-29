@@ -74,7 +74,7 @@ public final class Contact implements Serializable {
         if(file.exists()) System.out.println("\n" + file.getAbsolutePath() + " existe déjà\n");
         else System.out.println("\nCréation de " + file.getAbsolutePath() + "\n");
 
-        lectureFichierContact();
+        listInfos = lectureFichierContact();
         
         // Ajout des infos à enregistrer dans le tableau
         listInfos.add(infosContact);
