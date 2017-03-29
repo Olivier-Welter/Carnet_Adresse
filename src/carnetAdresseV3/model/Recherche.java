@@ -63,7 +63,7 @@ public final class Recherche {
         if ((recherche != null && !recherche.isEmpty())) {
             reponse = true;
         } else {
-            mssgErreur = "Il faut renseigner le champ de recherche !";
+            mssgErreur = "";
         }
 
         return reponse;
