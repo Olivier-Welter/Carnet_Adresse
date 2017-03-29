@@ -88,7 +88,7 @@ public class Main extends Application {
      */
     private void listeInfos(ArrayList<ArrayList> listInfos) throws IOException
     {
-        
+        tableContent.clear();
         tableNom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         tablePrenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         tablePhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
@@ -111,7 +111,11 @@ public class Main extends Application {
     {
         // Instancie Recherche avec la chaîne contenue dans le champ de saisie de recherche
         Recherche currentRecherche = new Recherche(contactRecherche.getText(), Contact.lectureFichierContact());
-        if(currentRecherche.getMssgErreur() != null) labelErreur.setText(currentRecherche.getMssgErreur());
+        if(currentRecherche.getMssgErreur() != null)
+        {
+            labelErreur.setText("");
+            listeInfos(Contact.lectureFichierContact());
+        }
         else
         {
             labelErreur.setText("Recherche de " + currentRecherche.getRecherche());
