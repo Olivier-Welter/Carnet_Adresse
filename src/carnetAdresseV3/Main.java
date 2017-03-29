@@ -171,6 +171,15 @@ public class Main extends Application {
             labelErreur.setText(currentContact.getMssgErreur());
         } else {
             labelErreur.setText("Contact " + currentContact.getNom() + " enregistré !");
+            contactNom.clear();
+            contactPrenom.clear();
+            contactFixePhone.clear();
+            contactMobilePhone.clear(); 
+            contactFixePhone.clear();
+            contactMailPro.clear();
+            contactMailPerso.clear();
+            contactAdresse.clear();
+			
         }
     }
 
