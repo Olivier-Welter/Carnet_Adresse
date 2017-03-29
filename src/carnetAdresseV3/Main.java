@@ -5,11 +5,8 @@ import carnetAdresseV3.model.Recherche;
 import carnetAdresseV3.model.TableItem;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,7 +16,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -27,7 +23,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 /**
  *
@@ -115,7 +110,7 @@ public class Main extends Application {
         tableMail.setCellValueFactory(new PropertyValueFactory<>("mail"));
 
         for (ArrayList<String> ligne : listInfos) {
-            tableContent.add(new TableItem(ligne.get(0), ligne.get(1), ligne.get(2), ligne.get(3), ligne.get(4)));
+                        tableContent.add(new TableItem(ligne.get(0), ligne.get(1), ligne.get(2) + "\n" + ligne.get(3), ligne.get(4), ligne.get(5) + "\n" + ligne.get(6)));
         }
         table.setItems(tableContent);
     }

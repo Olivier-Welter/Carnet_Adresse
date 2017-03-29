@@ -26,7 +26,7 @@ public final class Contact implements Serializable {
      */
     public Contact(String nom, String prenom, String mobilePhone, String fixePhone, String mailPerso, String mailPro, String adresse)
     {
-        infosContact = new ArrayList(Arrays.asList(nom,prenom,mobilePhone,fixePhone,mailPerso,mailPro,adresse));
+        infosContact = new ArrayList(Arrays.asList(nom,prenom,mobilePhone,fixePhone,adresse,mailPerso,mailPro));
         if (infosCorrectes()) enregistrerContact();
     }
     

@@ -27,7 +27,7 @@
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="293.0" prefWidth="632.0">
                <children>
-                  <Button layoutX="419.0" layoutY="27.0" mnemonicParsing="false" onAction="#actionBoutonContact" prefHeight="25.0" prefWidth="199.0" text="Ajouter Contact" />
+                  <Button layoutX="410.0" layoutY="27.0" mnemonicParsing="false" onAction="#actionBoutonContact" prefHeight="25.0" prefWidth="199.0" text="Ajouter Contact" />
                   <Label fx:id="labelErreur" layoutX="124.0" layoutY="63.0" prefHeight="17.0" prefWidth="385.0" text="" />
                   <TextField fx:id="contactRecherche" layoutX="24.0" layoutY="27.0" prefHeight="25.0" prefWidth="344.0" promptText="Rechercher un contact" />
                </children>
