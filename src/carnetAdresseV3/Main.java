@@ -2,10 +2,12 @@ package carnetAdresseV3;
 
 import carnetAdresseV3.model.Contact;
 import carnetAdresseV3.model.Recherche;
+import carnetAdresseV3.model.TableItem;
 import java.io.IOException;
 import java.util.ArrayList;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,9 +16,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -26,12 +30,13 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     private Stage currentStage;
+    private final ObservableList<TableItem> tableContent = FXCollections.observableArrayList();
     
     @FXML private Label labelErreur;
     @FXML private TextArea contactAdresse;
-    @FXML private TableView contactTable;
+    @FXML private TableView<TableItem> table;
+    @FXML private TableColumn<TableItem, String> tableNom,tablePrenom,tablePhone,tableAdresse,tableMail;
     @FXML private TextField contactRecherche,contactNom,contactPrenom,contactFixePhone,contactMobilePhone,contactMailPro,contactMailPerso;
-    
 
     
     /**
@@ -42,7 +47,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException
     {
         currentStage = primaryStage;
-        currentStage.setTitle("LE carnet d'adresse by Olive, Vince & Kéké");
+        currentStage.setTitle("L'anale des libertins toulousains");
         changePage("view/AccueilView.fxml");
         listeInfos(Contact.lectureFichierContact());
     }
@@ -61,15 +66,42 @@ public class Main extends Application {
         currentStage.show();
     }
     
+    @FXML
+    protected void initialize()
+    {
+        PropertyValueFactory<TableItem, String> nomProperty = new PropertyValueFactory<>("nom");
+        PropertyValueFactory<TableItem, String> prenomProperty = new PropertyValueFactory<>("prenom");
+        PropertyValueFactory<TableItem, String> phoneProperty = new PropertyValueFactory<>("phone");
+        PropertyValueFactory<TableItem, String> adresseProperty = new PropertyValueFactory<>("adresse");
+        PropertyValueFactory<TableItem, String> mailProperty = new PropertyValueFactory<>("mail");
+        tableNom.setCellValueFactory(nomProperty);
+        tablePrenom.setCellValueFactory(prenomProperty);
+        tablePhone.setCellValueFactory(phoneProperty);
+        tableAdresse.setCellValueFactory(adresseProperty);
+        tableMail.setCellValueFactory(mailProperty);
+        ArrayList listInfos = Contact.lectureFichierContact();
+        
+        for(int i = 0; i < listInfos.size();i++)
+        {
+            ArrayList ligne = (ArrayList) listInfos.get(i);
+            tableContent.add(new TableItem((String) ligne.get(0),(String) ligne.get(1),(String) ligne.get(2),(String) ligne.get(3),(String) ligne.get(4)));
+        }
+        table.setItems(tableContent);
+    }
+    
      /**
      * Liste les infos sur la page d'accueil
      */
     private void listeInfos(ArrayList listInfos) throws IOException
     {
+        /*
+        tableContent.add(new TableItem("Welter","Olivier","05607670752\n6546561644","64 route de ta mère 696969 boulecity","welter.olivier@gmail.com"));
+        tableContent.add(new TableItem("Tescari","Vincent","05607670752\n6546561644","64 route de ta mère 696969 boulecity","tescari.vincent@gmail.com\nsexybitchdu31@youporn.com"));
+        tableContent.add(new TableItem("Diez","Kévin","05607670752\n6546561644","64 route de ta mère 696969 boulecity","diez.kevin@gmail.com"));
+        */
         System.out.println(listInfos);
     }
 
-    
     
     /**
      * Bouton RECHERCHE

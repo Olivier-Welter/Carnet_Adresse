@@ -20,13 +20,13 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TableView fx:id="contactTable" prefHeight="434.0" prefWidth="632.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columns>
-                      <TableColumn prefWidth="100.0" text="Nom" />
-                      <TableColumn prefWidth="100.0" text="Prénom" />
-                        <TableColumn prefWidth="100.0" text="Téléphone" />
-                        <TableColumn prefWidth="200.0" text="Adresse" />
-                        <TableColumn prefWidth="134.0" text="Email" />
+                  <TableView fx:id="table" prefHeight="434.0" prefWidth="632.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns >
+                      <TableColumn fx:id="tableNom" prefWidth="100.0" text="Nom" />
+                      <TableColumn fx:id="tablePrenom" prefWidth="100.0" text="Prénom" />
+                        <TableColumn fx:id="tablePhone" prefWidth="100.0" text="Téléphone" />
+                        <TableColumn fx:id="tableAdresse" prefWidth="200.0" text="Adresse" />
+                        <TableColumn fx:id="tableMail" prefWidth="134.0" text="Email" />
                     </columns>
                   </TableView>
                </children>
