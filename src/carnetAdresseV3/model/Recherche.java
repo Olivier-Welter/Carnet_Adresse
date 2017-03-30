@@ -15,7 +15,6 @@ public final class Recherche {
 
     /**
      * Constructeur recherche la chaîne passée en paramètre
-     *
      * @param recherche
      */
     public Recherche(String recherche, ArrayList listInfos) {
@@ -27,7 +26,6 @@ public final class Recherche {
 
     /**
      * Retoune la liste résultant de la recherche
-     *
      * @return
      */
     public ArrayList getListRecherche() {
@@ -36,7 +34,6 @@ public final class Recherche {
 
     /**
      * Retoune la chaîne recherchée
-     *
      * @return
      */
     public String getRecherche() {
@@ -45,7 +42,6 @@ public final class Recherche {
 
     /**
      * Retoune le message d'erreur s'il y en a un
-     *
      * @return
      */
     public String getMssgErreur() {
@@ -54,46 +50,40 @@ public final class Recherche {
 
     /**
      * Vérifie si la recherche n'est pas vide
-     *
-     * @return
+     * @return false si elle l'est
      */
-    public Boolean rechercheCorrecte() {
+    public Boolean rechercheCorrecte()
+    {
         Boolean reponse = false;
         
-        if ((recherche != null && !recherche.isEmpty())) {
-            reponse = true;
-        } else {
-            mssgErreur = "";
-        }
+        if ((recherche != null && !recherche.isEmpty())) reponse = true;
+        else mssgErreur = "";
 
         return reponse;
     }
 
     /**
-     * Recherche
-     * @param listInfos
+     * Fonction Recherche
+     * @param listInfos contient la liste où chercher la chaîne "recherche"
      */
-    public void rechercheContact(ArrayList<ArrayList> listInfos) {
-        // Initialisation des données pour la recherche :
-        Pattern pattern;
-        Matcher matcher;
-        // Fonction recherche contact
-        // Stocke la liste résultant de la recherche
+    public void rechercheContact(ArrayList<ArrayList> listInfos)
+    {
+        // Initialisation liste résultat
         listRecherche = new ArrayList();
-        int i;
         // Boucle de parcours de notre liste 
         for (ArrayList<String> ligne:listInfos) {
             // Affectation des valeurs pour la recherche sans sensibilité à la casse
-            pattern = Pattern.compile(recherche,Pattern.CASE_INSENSITIVE);
-            matcher = pattern.matcher(ligne.get(0));
-            // Comparaison 
-            if (matcher.find()) {
-                // Si correspondance, ajout dans la liste 
+            Pattern pattern = Pattern.compile(recherche,Pattern.CASE_INSENSITIVE);
+            // Comparaison avec le nom et prénom
+            Matcher matcher1 = pattern.matcher(ligne.get(0));
+            Matcher matcher2 = pattern.matcher(ligne.get(1));
+            // Si correspondance, ajout dans la liste 
+            if (matcher1.find() || matcher2.find())
+            {
                 listRecherche.add(ligne);
             }
         }
         // Si pas de résultat : 
-        if (listRecherche.isEmpty())
-            mssgErreur = "Pas de résultat pour cette recherche !";
+        if (listRecherche.isEmpty()) mssgErreur = "Pas de résultat pour cette recherche !";
     }
 }

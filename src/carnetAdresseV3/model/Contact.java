@@ -66,7 +66,7 @@ public final class Contact implements Serializable {
     public void enregistrerContact()
     {
         // Initialisation du tableau
-        ArrayList listInfos = new ArrayList();
+        ArrayList listInfos;
         
         // Teste si le fichier existe
         File file = new File("contact.dat");

@@ -110,7 +110,7 @@ public class Main extends Application {
         tableMail.setCellValueFactory(new PropertyValueFactory<>("mail"));
 
         for (ArrayList<String> ligne : listInfos) {
-                        tableContent.add(new TableItem(ligne.get(0), ligne.get(1), ligne.get(2) + "\n" + ligne.get(3), ligne.get(4), ligne.get(5) + "\n" + ligne.get(6)));
+                        tableContent.add(new TableItem(ligne.get(0), ligne.get(1), "Fixe : " + ligne.get(2) + "\nMobile : " + ligne.get(3), ligne.get(4), "Pro : " + ligne.get(5) + "\n" + "Perso : " + ligne.get(6)));
         }
         table.setItems(tableContent);
     }
