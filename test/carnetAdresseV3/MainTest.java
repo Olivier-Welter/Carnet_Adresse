@@ -15,10 +15,29 @@ import static org.junit.Assert.*;
 
 /**
  *
+<<<<<<< HEAD
  * @author Vince
  */
 public class MainTest {
     
+=======
+ * @author Kévin
+ */
+public class MainTest {
+    
+    
+    /**
+     * Le main lance la méthode start avec Application.launch()
+     *
+     * @param args
+     * @throws java.lang.Exception
+     */
+    public static void main(String[] args) throws Exception {
+        MainTest testClassMain = new MainTest();
+        testClassMain.testStart();
+    }
+    
+>>>>>>> origin/master
     public MainTest() {
     }
     
