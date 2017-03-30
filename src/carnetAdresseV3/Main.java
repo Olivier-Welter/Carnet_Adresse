@@ -108,7 +108,7 @@ public class Main extends Application {
         tablePhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
         tableAdresse.setCellValueFactory(new PropertyValueFactory<>("adresse"));
         tableMail.setCellValueFactory(new PropertyValueFactory<>("mail"));
-
+        
         for (ArrayList<String> ligne : listInfos) {
                         tableContent.add(new TableItem(ligne.get(0), ligne.get(1), "Fixe : " + ligne.get(2) + "\nMobile : " + ligne.get(3), ligne.get(4), "Pro : " + ligne.get(5) + "\n" + "Perso : " + ligne.get(6)));
         }
