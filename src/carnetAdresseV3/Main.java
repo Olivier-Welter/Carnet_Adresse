@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Olive, Vince & Kéké
+ * @author DreamTeam
  */
 public class Main extends Application {
 
@@ -56,7 +56,7 @@ public class Main extends Application {
     /**
      * Démarrage de l'interface graphique
      *
-     * @throws java.io.IOException
+     * @throws java.io.IOException Erreur
      */
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -81,6 +81,10 @@ public class Main extends Application {
 
     }
 
+    /**
+     *
+     * @throws IOException Erreur
+     */
     @FXML
     protected void initialize() throws IOException {
         if (showTable) {
@@ -100,6 +104,8 @@ public class Main extends Application {
 
     /**
      * Liste les infos sur la page d'accueil
+     * @param listInfos Liste que l'on veut afficher dans le tableau
+     * @throws java.io.IOException Erreur
      */
     public void listeInfos(ArrayList<ArrayList> listInfos) throws IOException {
         tableContent.clear();
@@ -119,8 +125,8 @@ public class Main extends Application {
     
     /**
      * Bouton RECHERCHE
-     *
-     * @param event
+     * @param recherche chaîne à rechercher
+     * @throws java.io.IOException Erreur
      */
     private void actionRecherche(String recherche) throws IOException {
         // Instancie Recherche avec la chaîne contenue dans le champ de saisie de recherche
@@ -144,7 +150,8 @@ public class Main extends Application {
     /**
      * Bouton AJOUTER CONTACT
      *
-     * @param event
+     * @param event on click
+     * @throws java.io.IOException Erreur
      */
     @FXML
     public void actionBoutonContact(ActionEvent event) throws IOException {
@@ -156,7 +163,8 @@ public class Main extends Application {
     /**
      * Bouton ENREGISTRER
      *
-     * @param event
+     * @param event on click
+     * @throws java.io.IOException Erreur
      */
     @FXML
     public void actionBoutonEnregistrer(ActionEvent event) throws IOException {
@@ -181,7 +189,7 @@ public class Main extends Application {
     /**
      * Bouton RETOUR
      *
-     * @param event
+     * @param event on click
      */
     @FXML
     private void actionBoutonRetour(ActionEvent event) throws IOException {
@@ -193,7 +201,7 @@ public class Main extends Application {
     /**
      * Le main lance la méthode start avec Application.launch()
      *
-     * @param args
+     * @param args jsais ap
      */
     public static void main(String[] args) {
         launch(args);

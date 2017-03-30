@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author Olive, Vince & Kéké
+ * @author DreamTeam
  */
 public final class Recherche {
 
@@ -15,7 +15,8 @@ public final class Recherche {
 
     /**
      * Constructeur recherche la chaîne passée en paramètre
-     * @param recherche
+     * @param recherche chaîne à chercher
+     * @param listInfos tableau où chercher
      */
     public Recherche(String recherche, ArrayList listInfos) {
         this.recherche = recherche;
@@ -26,7 +27,7 @@ public final class Recherche {
 
     /**
      * Retoune la liste résultant de la recherche
-     * @return
+     * @return tableau résultat
      */
     public ArrayList getListRecherche() {
         return listRecherche;
@@ -34,7 +35,7 @@ public final class Recherche {
 
     /**
      * Retoune la chaîne recherchée
-     * @return
+     * @return chaîne recherchée
      */
     public String getRecherche() {
         return recherche;
@@ -42,7 +43,7 @@ public final class Recherche {
 
     /**
      * Retoune le message d'erreur s'il y en a un
-     * @return
+     * @return mssg erreur
      */
     public String getMssgErreur() {
         return mssgErreur;

@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 
 /**
- * @author Olive, Vince & Kéké
+ * @author DreamTeam
  */
 
 public final class Contact implements Serializable {
@@ -16,13 +16,13 @@ public final class Contact implements Serializable {
 
     /**
      * Constructeur contact
-     * @param nom
-     * @param prenom
-     * @param mobilePhone
-     * @param fixePhone
-     * @param mailPerso
-     * @param mailPro
-     * @param adresse
+     * @param nom nom
+     * @param prenom prenom
+     * @param mobilePhone mobile
+     * @param fixePhone fixe
+     * @param mailPerso mail perso
+     * @param mailPro mail pro
+     * @param adresse adresse
      */
     public Contact(String nom, String prenom, String mobilePhone, String fixePhone, String mailPerso, String mailPro, String adresse)
     {
@@ -32,7 +32,7 @@ public final class Contact implements Serializable {
     
     /**
      * Retoune le nom du contact
-     * @return 
+     * @return nom
      */
     public String getNom()
     {
@@ -41,7 +41,7 @@ public final class Contact implements Serializable {
 
     /**
      * Retoune le message d'erreur s'il y en a un
-     * @return 
+     * @return message d'erreur
      */
     public String getMssgErreur()
     {
@@ -50,7 +50,7 @@ public final class Contact implements Serializable {
 
     /**
      * Vérifie si la recherche n'est pas vide
-     * @return 
+     * @return booléen
      */
     public Boolean infosCorrectes()
     {
@@ -85,7 +85,7 @@ public final class Contact implements Serializable {
     
     /**
      * Lecture du fichier contact.dat
-     * @return 
+     * @return le contenu du fichier
     */
     public static ArrayList<ArrayList> lectureFichierContact()
     {
@@ -111,7 +111,7 @@ public final class Contact implements Serializable {
     
     /**
      * Ecriture du fichier contact.dat
-     * @param arrayEcriture 
+     * @param arrayEcriture le contenu à écrire
     */
     public void ecritureFichierContact(ArrayList arrayEcriture)
     {

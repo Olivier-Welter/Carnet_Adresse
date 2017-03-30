@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package carnetAdresseV3.model;
 
 import java.io.FileInputStream;
@@ -16,7 +11,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Vince
+ * @author DreamTeam
  */
 public class ContactTest {
 
@@ -125,6 +120,9 @@ public class ContactTest {
         }
     }
 
+    /**
+     *
+     */
     public void removeLastContact() {
         // Initialisation du tableau
         ArrayList listInfos;

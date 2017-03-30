@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Abdias/Documents/NetBeansProjects/CarnetAdresseV3/test/carnetAdresseV3/model/ContactTest.java</file>
-            <file>file:/C:/Users/Abdias/Documents/NetBeansProjects/CarnetAdresseV3/src/carnetAdresseV3/model/Recherche.java</file>
-            <file>file:/C:/Users/Abdias/Documents/NetBeansProjects/CarnetAdresseV3/src/carnetAdresseV3/Main.java</file>
-            <file>file:/C:/Users/Abdias/Documents/NetBeansProjects/CarnetAdresseV3/src/carnetAdresseV3/model/Contact.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/CarnetAdresseV3/test/carnetAdresseV3/model/ContactTest.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/CarnetAdresseV3/test/carnetAdresseV3/model/RechercheTest.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/CarnetAdresseV3/src/carnetAdresseV3/model/Contact.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/CarnetAdresseV3/test/carnetAdresseV3/MainTest.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/CarnetAdresseV3/src/carnetAdresseV3/model/Recherche.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/CarnetAdresseV3/src/carnetAdresseV3/model/TableItem.java</file>
+            <file>file:/D:/Documents/NetBeansProjects/CarnetAdresseV3/src/carnetAdresseV3/Main.java</file>
         </group>
     </open-files>
 </project-private>

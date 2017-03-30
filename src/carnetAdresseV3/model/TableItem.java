@@ -3,13 +3,21 @@ package carnetAdresseV3.model;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
- * @author Olive, Vince & Kéké
+ * @author DreamTeam
  */
 public class TableItem {
     
   private final SimpleStringProperty nom,prenom,phone,adresse,mail;
 
-  public TableItem(String nom,String prenom,String phone,String adresse,String mail)
+    /**
+     *
+     * @param nom nom
+     * @param prenom prenom
+     * @param phone tel
+     * @param adresse adresse
+     * @param mail mail
+     */
+    public TableItem(String nom,String prenom,String phone,String adresse,String mail)
   {
     this.nom = new SimpleStringProperty(nom);
     this.prenom = new SimpleStringProperty(prenom);
@@ -18,53 +26,92 @@ public class TableItem {
     this.mail = new SimpleStringProperty(mail);
   }
   
-  
-  public String getNom()
+    /**
+     *
+     * @return nom
+     */
+    public String getNom()
   {
     return nom.get();
   }
   
-  public void setNom(String nom)
+    /**
+     *
+     * @param nom nom
+     */
+    public void setNom(String nom)
   {
     this.nom.set(nom);
   }
   
-  public String getPrenom()
+    /**
+     *
+     * @return prenom
+     */
+    public String getPrenom()
   {
     return prenom.get();
   }
   
-  public void setPrenom(String prenom)
+    /**
+     *
+     * @param prenom prenom
+     */
+    public void setPrenom(String prenom)
   {
     this.prenom.set(prenom);
   }
   
-  public String getPhone()
+    /**
+     *
+     * @return phone
+     */
+    public String getPhone()
   {
     return phone.get();
   }
   
-  public void setPhone(String phone)
+    /**
+     *
+     * @param phone phone
+     */
+    public void setPhone(String phone)
   {
     this.phone.set(phone);
   }
   
-  public String getAdresse()
+    /**
+     *
+     * @return adresse
+     */
+    public String getAdresse()
   {
     return adresse.get();
   }
   
-  public void setAdresse(String adresse)
+    /**
+     *
+     * @param adresse adresse
+     */
+    public void setAdresse(String adresse)
   {
     this.adresse.set(adresse);
   }
   
-  public String getMail()
+    /**
+     *
+     * @return mail
+     */
+    public String getMail()
   {
     return mail.get();
   }
   
-  public void setMail(String mail)
+    /**
+     *
+     * @param mail mail
+     */
+    public void setMail(String mail)
   {
     this.mail.set(mail);
   }
