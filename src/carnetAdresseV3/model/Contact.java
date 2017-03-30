@@ -54,8 +54,8 @@ public final class Contact implements Serializable {
      */
     public Boolean infosCorrectes()
     {
-        if (infosContact.get(0) == null || infosContact.get(0).isEmpty()) mssgErreur = "Il a pas de nom ce gros enculé ?!";
-        else if (infosContact.get(1) == null || infosContact.get(1).isEmpty()) mssgErreur = "PD que tu es ! Pas de prénom, pas de contact !";
+        if (infosContact.get(0) == null || infosContact.get(0).isEmpty()) mssgErreur = "Il a pas de nom ce ptit coquinou ?!";
+        else if (infosContact.get(1) == null || infosContact.get(1).isEmpty()) mssgErreur = "Grande folle ! Pas de prénom, pas de contact !";
 
         return (mssgErreur == null);
     }
