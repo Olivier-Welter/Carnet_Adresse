@@ -14,11 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
-<<<<<<< HEAD
  * @author Vince
-=======
- * @author Kévin
->>>>>>> origin/master
  */
 public class TableItemTest {
     

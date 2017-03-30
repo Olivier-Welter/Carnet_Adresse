@@ -5,15 +5,12 @@
  */
 package carnetAdresseV3.model;
 
-<<<<<<< HEAD
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-=======
->>>>>>> origin/master
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -24,7 +21,6 @@ import static org.junit.Assert.*;
 
 /**
  *
-<<<<<<< HEAD
  * @author Vince
  */
 public class ContactTest {
@@ -44,27 +40,6 @@ public class ContactTest {
     public void setUp() {
     }
 
-=======
- * @author Kévin
- */
-public class ContactTest {
-    
-    public ContactTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
->>>>>>> origin/master
     @After
     public void tearDown() {
     }
@@ -72,7 +47,6 @@ public class ContactTest {
     /**
      * Test of getNom method, of class Contact.
      */
-<<<<<<< HEAD
     @org.junit.Test
     public void testGetNom() {
         System.out.println("getNom");
@@ -81,23 +55,11 @@ public class ContactTest {
         String result = instance.getNom();
         assertEquals(expResult, result);
         removeLastContact();
-=======
-    @Test
-    public void testGetNom() {
-        System.out.println("getNom");
-        Contact instance = null;
-        String expResult = "";
-        String result = instance.getNom();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
->>>>>>> origin/master
     }
 
     /**
      * Test of getMssgErreur method, of class Contact.
      */
-<<<<<<< HEAD
     @org.junit.Test
     public void testGetMssgErreur() {
         System.out.println("getMssgErreur");
@@ -109,23 +71,11 @@ public class ContactTest {
         expResult = "Grande folle ! Pas de prénom, pas de contact !";
         result = instance.getMssgErreur();
         assertEquals(expResult, result);
-=======
-    @Test
-    public void testGetMssgErreur() {
-        System.out.println("getMssgErreur");
-        Contact instance = null;
-        String expResult = "";
-        String result = instance.getMssgErreur();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
->>>>>>> origin/master
     }
 
     /**
      * Test of infosCorrectes method, of class Contact.
      */
-<<<<<<< HEAD
     @org.junit.Test
     public void testInfosCorrectes() {
         System.out.println("infosCorrectes");
@@ -142,23 +92,11 @@ public class ContactTest {
         result = instance.infosCorrectes();
         assertEquals(expResult, result);
         removeLastContact();
-=======
-    @Test
-    public void testInfosCorrectes() {
-        System.out.println("infosCorrectes");
-        Contact instance = null;
-        Boolean expResult = null;
-        Boolean result = instance.infosCorrectes();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
->>>>>>> origin/master
     }
 
     /**
      * Test of enregistrerContact method, of class Contact.
      */
-<<<<<<< HEAD
     @org.junit.Test
     public void testEnregistrerContact() {
         System.out.println("enregistrerContact");
@@ -166,21 +104,11 @@ public class ContactTest {
         instance.enregistrerContact();
         removeLastContact();
         removeLastContact();
-=======
-    @Test
-    public void testEnregistrerContact() {
-        System.out.println("enregistrerContact");
-        Contact instance = null;
-        instance.enregistrerContact();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
->>>>>>> origin/master
     }
 
     /**
      * Test of lectureFichierContact method, of class Contact.
      */
-<<<<<<< HEAD
     @org.junit.Test
     public void testLectureFichierContact() {
         System.out.println("lectureFichierContact");
@@ -193,22 +121,11 @@ public class ContactTest {
         }
         ArrayList<ArrayList> result = Contact.lectureFichierContact();
         assertEquals(expResult, result);
-=======
-    @Test
-    public void testLectureFichierContact() {
-        System.out.println("lectureFichierContact");
-        ArrayList<ArrayList> expResult = null;
-        ArrayList<ArrayList> result = Contact.lectureFichierContact();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
->>>>>>> origin/master
     }
 
     /**
      * Test of ecritureFichierContact method, of class Contact.
      */
-<<<<<<< HEAD
     @org.junit.Test
     public void testEcritureFichierContact() {
         System.out.println("ecritureFichierContact");
@@ -255,16 +172,4 @@ public class ContactTest {
         } catch (IOException e) {
         }
     }
-=======
-    @Test
-    public void testEcritureFichierContact() {
-        System.out.println("ecritureFichierContact");
-        ArrayList arrayEcriture = null;
-        Contact instance = null;
-        instance.ecritureFichierContact(arrayEcriture);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
->>>>>>> origin/master
 }

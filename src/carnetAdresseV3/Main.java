@@ -41,21 +41,18 @@ public class Main extends Application {
     @FXML
     private TableView<TableItem> table;
     @FXML
-    private TableColumn<TableItem, String> tableNom,tablePrenom,tablePhone,tableAdresse,tableMail;
+    private TableColumn<TableItem, String> tableNom;
+    @FXML
+    private TableColumn<TableItem, String> tablePrenom;
+    @FXML
+    private TableColumn<TableItem, String> tablePhone;
+    @FXML
+    private TableColumn<TableItem, String> tableAdresse;
+    @FXML
+    private TableColumn<TableItem, String> tableMail;
     @FXML
     private TextField contactRecherche, contactNom, contactPrenom, contactFixePhone, contactMobilePhone, contactMailPro, contactMailPerso;
 
-    
-    /**
-     * Le main lance la méthode start avec Application.launch()
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
-    
-    
     /**
      * Démarrage de l'interface graphique
      *
@@ -193,4 +190,12 @@ public class Main extends Application {
         changePage("view/AccueilView.fxml");
     }
 
+    /**
+     * Le main lance la méthode start avec Application.launch()
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
 }

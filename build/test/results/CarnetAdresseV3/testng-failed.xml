@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [CarnetAdresseV3]">
+  <test name="carnetAdresseV3.model.ContactTest(failed)" junit="true">
+    <classes>
+      <class name="carnetAdresseV3.model.ContactTest">
+        <methods>
+          <include name="testEcritureFichierContact"/>
+        </methods>
+      </class> <!-- carnetAdresseV3.model.ContactTest -->
+    </classes>
+  </test> <!-- carnetAdresseV3.model.ContactTest(failed) -->
+</suite> <!-- Failed suite [CarnetAdresseV3] -->
