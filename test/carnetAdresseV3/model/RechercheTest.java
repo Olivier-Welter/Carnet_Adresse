@@ -6,6 +6,7 @@
 package carnetAdresseV3.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -44,12 +45,20 @@ public class RechercheTest {
     @Test
     public void testGetListRecherche() {
         System.out.println("getListRecherche");
-        Recherche instance = null;
-        ArrayList expResult = null;
+        // Chaîne à rechercher
+        String recherche = "to";
+        // Tableau où effectuer la recherche
+        ArrayList infosContact = new ArrayList(Arrays.asList("toto","tata","","",""));
+        ArrayList listContact = new ArrayList();
+        listContact.add(infosContact);
+        // Tableau attendu en résultat
+        ArrayList expResult = new ArrayList();
+        expResult.add(Arrays.asList("toto","tata","","",""));
+        // Test nouvelle instance + appel méthode
+        Recherche instance = new Recherche(recherche, listContact);
         ArrayList result = instance.getListRecherche();
+        // Comparaison résultat attendus/obtenus
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -58,12 +67,19 @@ public class RechercheTest {
     @Test
     public void testGetRecherche() {
         System.out.println("getRecherche");
-        Recherche instance = null;
-        String expResult = "";
+        // Chaîne à rechercher
+        String recherche = "to";
+        // Tableau où effectuer la recherche
+        ArrayList infosContact = new ArrayList(Arrays.asList("toto","tata","","",""));
+        ArrayList listContact = new ArrayList();
+        listContact.add(infosContact);
+        // Tableau attendu en résultat
+        String expResult = "to";
+        // Test nouvelle instance + appel méthode
+        Recherche instance = new Recherche(recherche, listContact);
         String result = instance.getRecherche();
+        // Comparaison résultat attendus/obtenus
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -72,12 +88,37 @@ public class RechercheTest {
     @Test
     public void testGetMssgErreur() {
         System.out.println("getMssgErreur");
-        Recherche instance = null;
-        String expResult = "";
+        // Chaîne à rechercher
+        String recherche = "to";
+        // Tableau où effectuer la recherche
+        ArrayList infosContact = new ArrayList(Arrays.asList("toto","tata","","",""));
+        ArrayList listContact = new ArrayList();
+        listContact.add(infosContact);
+        // Tableau attendu en résultat
+        String expResult = null;
+        // Test nouvelle instance + appel méthode
+        Recherche instance = new Recherche(recherche, listContact);
         String result = instance.getMssgErreur();
+        // Comparaison résultat attendus/obtenus
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // Chaîne à rechercher
+        recherche = "";
+        // Tableau attendu en résultat
+        expResult = "";
+        // Test nouvelle instance + appel méthode
+        instance = new Recherche(recherche, listContact);
+        result = instance.getMssgErreur();
+        // Comparaison résultat attendus/obtenus
+        assertEquals(expResult, result);
+        // Chaîne à rechercher
+        recherche = "tu";
+        // Tableau attendu en résultat
+        expResult = "Pas de résultat pour cette recherche !";
+        // Test nouvelle instance + appel méthode
+        instance = new Recherche(recherche, listContact);
+        result = instance.getMssgErreur();
+        // Comparaison résultat attendus/obtenus
+        assertEquals(expResult, result);
     }
 
     /**
@@ -86,12 +127,28 @@ public class RechercheTest {
     @Test
     public void testRechercheCorrecte() {
         System.out.println("rechercheCorrecte");
-        Recherche instance = null;
-        Boolean expResult = null;
+        // Chaîne à rechercher
+        String recherche = "to";
+        // Tableau où effectuer la recherche
+        ArrayList infosContact = new ArrayList(Arrays.asList("toto","tata","","",""));
+        ArrayList listContact = new ArrayList();
+        listContact.add(infosContact);
+        // Tableau attendu en résultat
+        Boolean expResult = true;
+        // Test nouvelle instance + appel méthode
+        Recherche instance = new Recherche(recherche, listContact);
         Boolean result = instance.rechercheCorrecte();
+        // Comparaison résultat attendus/obtenus
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // Chaîne à rechercher
+        recherche = "";
+        // Tableau attendu en résultat
+        expResult = false;
+        // Test nouvelle instance + appel méthode
+        instance = new Recherche(recherche, listContact);
+        result = instance.rechercheCorrecte();
+        // Comparaison résultat attendus/obtenus
+        assertEquals(expResult, result);
     }
 
     /**
@@ -99,12 +156,36 @@ public class RechercheTest {
      */
     @Test
     public void testRechercheContact() {
-        System.out.println("rechercheContact");
-        ArrayList<ArrayList> listInfos = null;
-        Recherche instance = null;
-        instance.rechercheContact(listInfos);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // Chaîne à rechercher
+        String recherche = "to";
+        // Tableau où effectuer la recherche
+        ArrayList infosContact = new ArrayList(Arrays.asList("toto","tata","","",""));
+        ArrayList listContact = new ArrayList();
+        listContact.add(infosContact);
+        // Tableau attendu en résultat
+        ArrayList expResult = new ArrayList();
+        expResult.add(Arrays.asList("toto","tata","","",""));
+        // Test nouvelle instance + appel méthode
+        Recherche instance = new Recherche(recherche, listContact);
+        ArrayList result = instance.getListRecherche();
+        // Comparaison résultat attendus/obtenus
+        assertEquals(expResult, result);
+        // Chaîne à rechercher
+        recherche = "ta";
+        // Test nouvelle instance + appel méthode
+        instance = new Recherche(recherche, listContact);
+        result = instance.getListRecherche();
+        // Comparaison résultat attendus/obtenus
+        assertEquals(expResult, result);
+        // Chaîne à rechercher
+        recherche = "tu";
+        // Tableau attendu en résultat
+        expResult = new ArrayList();
+        // Test nouvelle instance + appel méthode
+        instance = new Recherche(recherche, listContact);
+        result = instance.getListRecherche();
+        // Comparaison résultat attendus/obtenus
+        assertEquals(expResult, result);
     }
     
 }

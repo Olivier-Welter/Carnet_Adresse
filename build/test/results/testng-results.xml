@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="CarnetAdresseV3" duration-ms="188" started-at="2017-03-30T11:07:23Z" finished-at="2017-03-30T11:07:23Z">
+  <suite name="CarnetAdresseV3" duration-ms="70" started-at="2017-03-30T12:35:11Z" finished-at="2017-03-30T12:35:11Z">
     <groups>
     </groups>
-    <test name="carnetAdresseV3.model.ContactTest" duration-ms="188" started-at="2017-03-30T11:07:23Z" finished-at="2017-03-30T11:07:23Z">
-      <class name="carnetAdresseV3.model.ContactTest">
-        <test-method status="PASS" signature="testLectureFichierContact()[pri:0, instance:testLectureFichierContact(carnetAdresseV3.model.ContactTest)]" name="testLectureFichierContact" duration-ms="67" started-at="2017-03-30T13:07:23Z" finished-at="2017-03-30T13:07:23Z">
+    <test name="carnetAdresseV3.model.RechercheTest" duration-ms="70" started-at="2017-03-30T12:35:11Z" finished-at="2017-03-30T12:35:11Z">
+      <class name="carnetAdresseV3.model.RechercheTest">
+        <test-method status="PASS" signature="testGetListRecherche()[pri:0, instance:testGetListRecherche(carnetAdresseV3.model.RechercheTest)]" name="testGetListRecherche" duration-ms="6" started-at="2017-03-30T14:35:11Z" finished-at="2017-03-30T14:35:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLectureFichierContact -->
-        <test-method status="PASS" signature="testEcritureFichierContact()[pri:0, instance:testEcritureFichierContact(carnetAdresseV3.model.ContactTest)]" name="testEcritureFichierContact" duration-ms="4" started-at="2017-03-30T13:07:23Z" finished-at="2017-03-30T13:07:23Z">
+        </test-method> <!-- testGetListRecherche -->
+        <test-method status="PASS" signature="testRechercheCorrecte()[pri:0, instance:testRechercheCorrecte(carnetAdresseV3.model.RechercheTest)]" name="testRechercheCorrecte" duration-ms="1" started-at="2017-03-30T14:35:11Z" finished-at="2017-03-30T14:35:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testEcritureFichierContact -->
-        <test-method status="PASS" signature="testGetNom()[pri:0, instance:testGetNom(carnetAdresseV3.model.ContactTest)]" name="testGetNom" duration-ms="5" started-at="2017-03-30T13:07:23Z" finished-at="2017-03-30T13:07:23Z">
+        </test-method> <!-- testRechercheCorrecte -->
+        <test-method status="PASS" signature="testRechercheContact()[pri:0, instance:testRechercheContact(carnetAdresseV3.model.RechercheTest)]" name="testRechercheContact" duration-ms="0" started-at="2017-03-30T14:35:11Z" finished-at="2017-03-30T14:35:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGetNom -->
-        <test-method status="PASS" signature="testInfosCorrectes()[pri:0, instance:testInfosCorrectes(carnetAdresseV3.model.ContactTest)]" name="testInfosCorrectes" duration-ms="4" started-at="2017-03-30T13:07:23Z" finished-at="2017-03-30T13:07:23Z">
+        </test-method> <!-- testRechercheContact -->
+        <test-method status="PASS" signature="testGetRecherche()[pri:0, instance:testGetRecherche(carnetAdresseV3.model.RechercheTest)]" name="testGetRecherche" duration-ms="0" started-at="2017-03-30T14:35:11Z" finished-at="2017-03-30T14:35:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testInfosCorrectes -->
-        <test-method status="PASS" signature="testEnregistrerContact()[pri:0, instance:testEnregistrerContact(carnetAdresseV3.model.ContactTest)]" name="testEnregistrerContact" duration-ms="8" started-at="2017-03-30T13:07:23Z" finished-at="2017-03-30T13:07:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testEnregistrerContact -->
-        <test-method status="PASS" signature="testGetMssgErreur()[pri:0, instance:testGetMssgErreur(carnetAdresseV3.model.ContactTest)]" name="testGetMssgErreur" duration-ms="0" started-at="2017-03-30T13:07:23Z" finished-at="2017-03-30T13:07:23Z">
+        </test-method> <!-- testGetRecherche -->
+        <test-method status="PASS" signature="testGetMssgErreur()[pri:0, instance:testGetMssgErreur(carnetAdresseV3.model.RechercheTest)]" name="testGetMssgErreur" duration-ms="0" started-at="2017-03-30T14:35:11Z" finished-at="2017-03-30T14:35:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetMssgErreur -->
-      </class> <!-- carnetAdresseV3.model.ContactTest -->
-    </test> <!-- carnetAdresseV3.model.ContactTest -->
+      </class> <!-- carnetAdresseV3.model.RechercheTest -->
+    </test> <!-- carnetAdresseV3.model.RechercheTest -->
   </suite> <!-- CarnetAdresseV3 -->
 </testng-results>
