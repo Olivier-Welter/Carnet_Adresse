@@ -1,33 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="CarnetAdresseV3" duration-ms="70" started-at="2017-03-30T12:35:11Z" finished-at="2017-03-30T12:35:11Z">
+  <suite name="CarnetAdresseV3" duration-ms="1786" started-at="2017-03-30T13:11:52Z" finished-at="2017-03-30T13:11:53Z">
     <groups>
     </groups>
-    <test name="carnetAdresseV3.model.RechercheTest" duration-ms="70" started-at="2017-03-30T12:35:11Z" finished-at="2017-03-30T12:35:11Z">
-      <class name="carnetAdresseV3.model.RechercheTest">
-        <test-method status="PASS" signature="testGetListRecherche()[pri:0, instance:testGetListRecherche(carnetAdresseV3.model.RechercheTest)]" name="testGetListRecherche" duration-ms="6" started-at="2017-03-30T14:35:11Z" finished-at="2017-03-30T14:35:11Z">
+    <test name="carnetAdresseV3.MainTest" duration-ms="1786" started-at="2017-03-30T13:11:52Z" finished-at="2017-03-30T13:11:53Z">
+      <class name="carnetAdresseV3.MainTest">
+        <test-method status="PASS" signature="testMain()[pri:0, instance:testMain(carnetAdresseV3.MainTest)]" name="testMain" duration-ms="1713" started-at="2017-03-30T15:11:52Z" finished-at="2017-03-30T15:11:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGetListRecherche -->
-        <test-method status="PASS" signature="testRechercheCorrecte()[pri:0, instance:testRechercheCorrecte(carnetAdresseV3.model.RechercheTest)]" name="testRechercheCorrecte" duration-ms="1" started-at="2017-03-30T14:35:11Z" finished-at="2017-03-30T14:35:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testRechercheCorrecte -->
-        <test-method status="PASS" signature="testRechercheContact()[pri:0, instance:testRechercheContact(carnetAdresseV3.model.RechercheTest)]" name="testRechercheContact" duration-ms="0" started-at="2017-03-30T14:35:11Z" finished-at="2017-03-30T14:35:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testRechercheContact -->
-        <test-method status="PASS" signature="testGetRecherche()[pri:0, instance:testGetRecherche(carnetAdresseV3.model.RechercheTest)]" name="testGetRecherche" duration-ms="0" started-at="2017-03-30T14:35:11Z" finished-at="2017-03-30T14:35:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRecherche -->
-        <test-method status="PASS" signature="testGetMssgErreur()[pri:0, instance:testGetMssgErreur(carnetAdresseV3.model.RechercheTest)]" name="testGetMssgErreur" duration-ms="0" started-at="2017-03-30T14:35:11Z" finished-at="2017-03-30T14:35:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetMssgErreur -->
-      </class> <!-- carnetAdresseV3.model.RechercheTest -->
-    </test> <!-- carnetAdresseV3.model.RechercheTest -->
+        </test-method> <!-- testMain -->
+      </class> <!-- carnetAdresseV3.MainTest -->
+    </test> <!-- carnetAdresseV3.MainTest -->
   </suite> <!-- CarnetAdresseV3 -->
 </testng-results>

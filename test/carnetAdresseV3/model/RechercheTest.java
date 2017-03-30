@@ -7,10 +7,7 @@ package carnetAdresseV3.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,26 +16,11 @@ import static org.junit.Assert.*;
  * @author Vince
  */
 public class RechercheTest {
-    
-    public RechercheTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
+    private final List contactTest = Arrays.asList("toto","tata","","","");
+    private final ArrayList infosContact = new ArrayList(contactTest);
+    private final ArrayList listContact = new ArrayList();
+    
     /**
      * Test of getListRecherche method, of class Recherche.
      */
@@ -48,12 +30,10 @@ public class RechercheTest {
         // Chaîne à rechercher
         String recherche = "to";
         // Tableau où effectuer la recherche
-        ArrayList infosContact = new ArrayList(Arrays.asList("toto","tata","","",""));
-        ArrayList listContact = new ArrayList();
         listContact.add(infosContact);
         // Tableau attendu en résultat
         ArrayList expResult = new ArrayList();
-        expResult.add(Arrays.asList("toto","tata","","",""));
+        expResult.add(contactTest);
         // Test nouvelle instance + appel méthode
         Recherche instance = new Recherche(recherche, listContact);
         ArrayList result = instance.getListRecherche();
@@ -70,8 +50,6 @@ public class RechercheTest {
         // Chaîne à rechercher
         String recherche = "to";
         // Tableau où effectuer la recherche
-        ArrayList infosContact = new ArrayList(Arrays.asList("toto","tata","","",""));
-        ArrayList listContact = new ArrayList();
         listContact.add(infosContact);
         // Tableau attendu en résultat
         String expResult = "to";
@@ -91,8 +69,6 @@ public class RechercheTest {
         // Chaîne à rechercher
         String recherche = "to";
         // Tableau où effectuer la recherche
-        ArrayList infosContact = new ArrayList(Arrays.asList("toto","tata","","",""));
-        ArrayList listContact = new ArrayList();
         listContact.add(infosContact);
         // Tableau attendu en résultat
         String expResult = null;
@@ -130,8 +106,6 @@ public class RechercheTest {
         // Chaîne à rechercher
         String recherche = "to";
         // Tableau où effectuer la recherche
-        ArrayList infosContact = new ArrayList(Arrays.asList("toto","tata","","",""));
-        ArrayList listContact = new ArrayList();
         listContact.add(infosContact);
         // Tableau attendu en résultat
         Boolean expResult = true;
@@ -159,12 +133,10 @@ public class RechercheTest {
         // Chaîne à rechercher
         String recherche = "to";
         // Tableau où effectuer la recherche
-        ArrayList infosContact = new ArrayList(Arrays.asList("toto","tata","","",""));
-        ArrayList listContact = new ArrayList();
         listContact.add(infosContact);
         // Tableau attendu en résultat
         ArrayList expResult = new ArrayList();
-        expResult.add(Arrays.asList("toto","tata","","",""));
+        expResult.add(contactTest);
         // Test nouvelle instance + appel méthode
         Recherche instance = new Recherche(recherche, listContact);
         ArrayList result = instance.getListRecherche();

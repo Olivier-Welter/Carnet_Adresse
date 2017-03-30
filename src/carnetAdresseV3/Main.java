@@ -101,7 +101,7 @@ public class Main extends Application {
     /**
      * Liste les infos sur la page d'accueil
      */
-    private void listeInfos(ArrayList<ArrayList> listInfos) throws IOException {
+    public void listeInfos(ArrayList<ArrayList> listInfos) throws IOException {
         tableContent.clear();
         tableNom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         tablePrenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
@@ -147,7 +147,7 @@ public class Main extends Application {
      * @param event
      */
     @FXML
-    private void actionBoutonContact(ActionEvent event) throws IOException {
+    public void actionBoutonContact(ActionEvent event) throws IOException {
         // Récupère la fenêtre où le bouton a été cliqué puis change de page
         currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         changePage("view/ContactView.fxml");
@@ -159,7 +159,7 @@ public class Main extends Application {
      * @param event
      */
     @FXML
-    private void actionBoutonEnregistrer(ActionEvent event) throws IOException {
+    public void actionBoutonEnregistrer(ActionEvent event) throws IOException {
         // Instancie Contact avec la chaîne contenue dans le champ de saisie du nom
         Contact currentContact = new Contact(contactNom.getText(), contactPrenom.getText(), contactFixePhone.getText(), contactMobilePhone.getText(), contactMailPro.getText(), contactMailPerso.getText(), contactAdresse.getText());
         if (currentContact.getMssgErreur() != null) {

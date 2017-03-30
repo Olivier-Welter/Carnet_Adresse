@@ -12,11 +12,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
@@ -24,25 +19,6 @@ import static org.junit.Assert.*;
  * @author Vince
  */
 public class ContactTest {
-
-    public ContactTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of getNom method, of class Contact.
@@ -150,26 +126,26 @@ public class ContactTest {
     }
 
     public void removeLastContact() {
-// Initialisation du tableau
+        // Initialisation du tableau
         ArrayList listInfos;
-// Récupération du contenu du fichier
+        // Récupération du contenu du fichier
         listInfos = Contact.lectureFichierContact();
-// Suppression de la dernière ligne enregistrée
+        // Suppression de la dernière ligne enregistrée
         listInfos.remove(listInfos.size() - 1);
-// Enregistrement modification
+        // Enregistrement modification
         try {
-// Ouverture fichier en écriture
+            // Ouverture fichier en écriture
             FileOutputStream fileOut = new FileOutputStream("contact.dat");
-// Sérialisation du fichier
+            // Sérialisation du fichier
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
-// Remplace le contenu du fichier par celui du tableau
+            // Remplace le contenu du fichier par celui du tableau
             out.writeObject(listInfos);
-// Arrêt de la sérialisation
+            // Arrêt de la sérialisation
             out.close();
-// Fermeture du fichier en écriture
+            // Fermeture du fichier en écriture
             fileOut.close();
-        } catch (FileNotFoundException e) {
-        } catch (IOException e) {
         }
+        catch (FileNotFoundException e) {}
+        catch (IOException e) {}
     }
 }
