@@ -5,8 +5,6 @@
  */
 package carnetAdresseV3;
 
-import java.io.IOException;
-import javafx.event.ActionEvent;
 import org.junit.Test;
 
 /**
@@ -14,8 +12,6 @@ import org.junit.Test;
  * @author Vince
  */
 public class MainTest {
-
-    private Main instance = new Main();
     
     /**
      * Test of main method, of class Main.
